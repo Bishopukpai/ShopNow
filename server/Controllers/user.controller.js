@@ -33,6 +33,8 @@ export async function registerUserController(request, response){
         }
 
         const newUser = new UserModel(payload)
+        const save = await newUser.save()
+
         
     } catch (error) {
         return response.status(500).json({
